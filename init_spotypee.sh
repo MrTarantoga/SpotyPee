@@ -9,7 +9,7 @@ GIT_RUST="https://github.com/meta-rust/meta-rust.git"
 
 git clone --branch $YOCTO_VERSION $GIT_YOCTO  $RESULT_FOLDER
 
-declare -a GIT_REPOS=( "$GIT_OPENEMBEDDED" "$GIT_RASPBERRYPI" "$GIT_SECURITY")
+declare -a GIT_REPOS=("$GIT_OPENEMBEDDED" "$GIT_RASPBERRYPI" "$GIT_SECURITY")
 cd $RESULT_FOLDER
 for git_repo in "${GIT_REPOS[@]}";
 do
