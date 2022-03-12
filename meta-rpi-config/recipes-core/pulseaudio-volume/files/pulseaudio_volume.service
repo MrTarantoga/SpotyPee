@@ -1,0 +1,12 @@
+[Unit]
+Description=Set audio loudness from Audio-USB to 100%
+After=network.target
+Wants=network-online.target
+
+[Service]
+User=spotify
+Type=oneshot
+ExecStart=/usr/bin/pactl set-sink-volume 0 100%
+
+[Install]
+WantedBy=multi-user.target

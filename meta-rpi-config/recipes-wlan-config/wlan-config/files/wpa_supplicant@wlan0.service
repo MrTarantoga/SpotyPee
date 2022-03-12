@@ -1,0 +1,15 @@
+[Unit]
+Description=WPA supplicant daemon (wlan0 version)
+Requires=sys-subsystem-net-devices-wlan0.device
+After=sys-subsystem-net-devices-wlan0.device
+Before=network.target
+Wants=network.target
+
+# NetworkManager users will probably want the dbus version instead.
+
+[Service]
+Type=simple
+ExecStart=/usr/sbin/wpa_supplicant -c/etc/wpa_supplicant/wpa_supplicant-wlan0.conf -i wlan0
+
+[Install]
+WantedBy=multi-user.target

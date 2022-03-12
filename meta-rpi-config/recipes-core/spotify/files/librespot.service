@@ -1,0 +1,14 @@
+[Unit]
+Description=Start the librespot service
+After=network.target pulseaudio_volume.service
+Wants=network-online.target pulseaudio_volume.service
+
+[Service]
+Restart=always
+RestartSec=3s
+User=spotify
+Type=simple
+ExecStart=/usr/bin/librespot -n "┌∩┐(◣_◢)┌∩┐" -b 320 --disable-audio-cache --initial-volume 100 --device-type audiodongle
+
+[Install]
+WantedBy=multi-user.target
