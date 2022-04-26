@@ -15,5 +15,4 @@ BBLAYERS ?= " \
     ##OEROOT##/meta-raspberrypi \
     ##OEROOT##/meta-security \
     ##OEROOT##/meta-rpi-config \
-    ##OEROOT##/meta-rust \
 "
