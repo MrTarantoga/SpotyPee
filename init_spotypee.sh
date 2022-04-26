@@ -1,13 +1,13 @@
 #!/bin/bash
 RESULT_FOLDER="spotypee_build"
-YOCTO_VERSION="honister"
+YOCTO_VERSION="kirkstone"
 GIT_YOCTO="git://git.yoctoproject.org/poky.git"
 GIT_OPENEMBEDDED="git://git.openembedded.org/meta-openembedded"
 GIT_RASPBERRYPI="git://git.yoctoproject.org/meta-raspberrypi"
 GIT_SECURITY="git://git.yoctoproject.org/meta-security.git"
-GIT_RUST="https://github.com/meta-rust/meta-rust.git"
 
-git clone --branch $YOCTO_VERSION $GIT_YOCTO  $RESULT_FOLDER
+
+git clone --branch $YOCTO_VERSION $GIT_YOCTO $RESULT_FOLDER
 
 declare -a GIT_REPOS=("$GIT_OPENEMBEDDED" "$GIT_RASPBERRYPI" "$GIT_SECURITY")
 cd $RESULT_FOLDER
@@ -16,8 +16,6 @@ do
 	echo $git_repo
 	git clone --branch $YOCTO_VERSION $git_repo
 done
-
-git clone --branch master $GIT_RUST
 
 rm -rf meta-poky
 rm -rf meta-yocto-bsp
