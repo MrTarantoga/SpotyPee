@@ -9,3 +9,4 @@ RUN apt-get update && \
 
 RUN useradd -m yocto
 RUN mkdir /home/yocto/yocto
+RUN chown yocto:users /home/yocto/yocto 

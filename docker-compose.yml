@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+  yocto_build:
+    image: goetz/yocto:latest
+    volumes:
+      - build_store:/home/yocto/yocto
+volumes:
+  build_store:
