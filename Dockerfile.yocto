@@ -1,5 +1,5 @@
-FROM ubuntu:22.04
-LABEL maintainer "gogrit01@hs-esslingen.de"
+FROM ubuntu:20.04
+LABEL maintainer "goetz-dev@web.de"
 LABEL description "Container to build yocto images"
 
 RUN apt-get update && \
@@ -7,6 +7,8 @@ RUN apt-get update && \
     apt-get -y clean && \
     apt-get autoremove
 
-RUN useradd -m yocto
-RUN mkdir /home/yocto/yocto
-RUN chown yocto:users /home/yocto/yocto 
+RUN useradd -m yocto && \
+    mkdir /home/yocto/yocto && \
+    mkdir /home/yocto/downloads && \
+    chown yocto:users /home/yocto/yocto && \
+    chown yocto:users /home/yocto/downloads 
