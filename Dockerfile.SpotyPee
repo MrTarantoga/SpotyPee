@@ -7,9 +7,9 @@ RUN apt-get update && \
     apt-get -y clean && \
     apt-get autoremove
 
-RUN su yocto && \
+RUN su yocto -c "\
     cd /home/yocto && \
 	git clone https://github.com/MrTarantoga/SpotyPee.git && \
 	cd SpotyPee && \
 	git checkout honister && \
-    bash init_spotypee.sh
+    bash init_spotypee.sh"
