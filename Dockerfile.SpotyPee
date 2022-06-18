@@ -1,0 +1,27 @@
+FROM knallwinkel/yocto_honister:latest
+
+LABEL maintainer "goetz-dev@web.de"
+LABEL description "Container to build SpotyPee"
+
+RUN apt-get update && \
+    apt-get install -y nano && \
+    apt-get -y clean && \
+    apt-get autoremove
+
+RUN apt-get update && \
+    export DEBIAN_FRONTEND=noninteractive && \
+    apt-get install -y rustc cargo libssl1.1 libssl-dev pkg-config && \
+    git clone https://github.com/meta-rust/cargo-bitbake.git && \
+    cd cargo-bitbake && git checkout 13eee8391261a605f1da26c1c9c6bab9d2a7b475 && \
+    cargo build --release && cp target/release/cargo-bitbake /bin && \
+    cd .. && rm -rf cargo-bitbake && rm -rf $HOME/.cargo && \
+    apt-get purge -y rustc cargo libssl-dev pkg-config && \
+    apt-get autoremove -y && \
+    apt-get -y clean
+
+RUN su yocto -c "\
+    cd /home/yocto && \
+	git clone https://github.com/MrTarantoga/SpotyPee.git && \
+	cd SpotyPee && \
+	git checkout honister && \
+    bash init_spotypee.sh"
