@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  yocto_build:
+    image: knallwinkel/spotypee:latest
+    user: yocto
+    working_dir: /home/yocto
+    volumes:
+      - build_store:/home/yocto/yocto
+      - downaload_store:/home/yocto/downloads
+volumes:
+  build_store:
+  downaload_store:
