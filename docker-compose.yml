@@ -2,7 +2,7 @@ version: '3'
 
 services:
   yocto_build:
-    image: knallwinkel/spotypee:latest
+    image: knallwinkel/spotypee:kirkstone
     user: yocto
     working_dir: /home/yocto
     volumes:
