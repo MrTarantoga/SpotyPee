@@ -2,7 +2,7 @@ name: Build Docker Container and execute them
 
 on:
   push:
-    branches: [ "kirkstone" ]
+    branches: [ "honister" ]
 
 jobs:
   push_to_docker_hub:
@@ -24,20 +24,20 @@ jobs:
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_TOKEN }}
     -
-      name: Build Dockerfile.yocto and push kirkstone tag
+      name: Build Dockerfile.yocto and push honister tag
       uses: docker/build-push-action@v3
       with:
         context: .
         file: Dockerfile.yocto
         push: true
-        tags: knallwinkel/yocto_kirkstone:latest
+        tags: knallwinkel/yocto_honister:latest
     -
-      name: Build Dockerfile.SpotyPee and push kirkstone tag
+      name: Build Dockerfile.SpotyPee and push honister tag
       uses: docker/build-push-action@v3
       with:
         context: .
         file: Dockerfile.SpotyPee
         push: true
         build-args: |
-          SPOTYPEE_LABEL=kirkstone
-        tags: knallwinkel/spotypee:kirkstone
+          SPOTYPEE_LABEL=honister
+        tags: knallwinkel/spotypee:honister

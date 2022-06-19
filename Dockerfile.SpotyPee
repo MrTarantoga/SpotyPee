@@ -1,9 +1,9 @@
-FROM knallwinkel/yocto_kirkstone:latest
+FROM knallwinkel/yocto_honister:latest
 
 LABEL maintainer "goetz-dev@web.de"
 LABEL description "Container to build SpotyPee"
 
-ARG SPOTYPEE_LABEL=v2.0.0
+ARG SPOTYPEE_LABEL=v1.0.0
 
 RUN apt-get update && \
     apt-get install -y nano && \
