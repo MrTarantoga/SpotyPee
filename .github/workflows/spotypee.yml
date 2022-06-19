@@ -1,4 +1,4 @@
-name: Docker Image CI
+name: Build Docker Container and execute them
 
 on:
   push:
@@ -7,14 +7,23 @@ on:
     branches: [ "main" ]
 
 jobs:
-
-  build:
-
+  docker:
     runs-on: ubuntu-latest
-
     steps:
-    - uses: actions/checkout@v3
-    - name: Build and execute build docker
+    - 
+      name: Checkout
+      uses: actions/checkout@v3
+    -
+      name: Get current commit hash
+      run: git_hash=$(git rev-parse "$GITHUB_SHA")
+    - 
+      name: Build Dockerfile.yocto 
       run: |
         docker build . --file Dockerfile.yocto --tag knallwinkel/yocto_kirkstone:latest
-        docker build . --file Dockerfile.SpotyPee --tag knallwinkel/spotypee:kirkstone
+    -
+      name: Build Dockerfile.SpotyPee
+      run: |
+        docker build . --file Dockerfile.SpotyPee --build-arg SPOTYPEE_LABEL=$git_hash --tag knallwinkel/spotypee:kirkstone
+    - 
+      name: Build System
+      run: |
