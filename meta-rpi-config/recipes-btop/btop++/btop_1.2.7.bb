@@ -1,4 +1,4 @@
-DESCRIPTION = "EResource monitor that shows usage and stats for processor, memory, disks, network and processes."
+DESCRIPTION = "Resource monitor that shows usage and stats for processor, memory, disks, network and processes."
 SECTION = "tools"
 DEPENDS = "sed-native"
 LICENSE = "Apache-2.0"
