@@ -24,7 +24,3 @@ jobs:
       name: Build Dockerfile.SpotyPee
       run: |
         docker build . --file Dockerfile.SpotyPee --build-arg SPOTYPEE_LABEL=$git_hash --tag knallwinkel/spotypee:kirkstone
-    - 
-      name: Build System
-      run: |
-        docker-compose --file docker-compose-action.yml up yocto_build
