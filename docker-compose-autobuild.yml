@@ -10,12 +10,13 @@ services:
       rm -rf download/* &&
       cd SpotyPee/spotypee_build &&
       source oe-init-build-env ../../yocto/build && 
-      echo 'BB_NUMBER_THREADS = \"6\"' >> conf/local.conf &&
-      bitbake spotypee"
+      bitbake spotypee &&
+      cp tmp/deploy/images/raspberrypi3-64/spotypee-raspberrypi3-64.rpi-sdimg /home/yocto/image"
 
     volumes:
       - build_store:/home/yocto/yocto
       - downaload_store:/home/yocto/downloads
+      - ./image:/home/yocto/image
 volumes:
   build_store:
   downaload_store:
