@@ -3,6 +3,8 @@ FROM knallwinkel/yocto_honister:latest
 LABEL maintainer "goetz-dev@web.de"
 LABEL description "Container to build SpotyPee"
 
+ARG SPOTYPEE_LABEL=v1.0.0
+
 RUN apt-get update && \
     apt-get install -y nano && \
     apt-get -y clean && \
@@ -23,5 +25,6 @@ RUN su yocto -c "\
     cd /home/yocto && \
 	git clone https://github.com/MrTarantoga/SpotyPee.git && \
 	cd SpotyPee && \
-	git checkout honister && \
+    echo 'Checkout commit/tag/branch: ${SPOTYPEE_LABEL}' && \
+	git checkout ${SPOTYPEE_LABEL} && \
     bash init_spotypee.sh"
