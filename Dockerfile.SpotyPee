@@ -1,4 +1,4 @@
-FROM knallwinkel/yocto_honister:latest
+FROM knallwinkel/yocto_kirkstone:latest
 
 LABEL maintainer "goetz-dev@web.de"
 LABEL description "Container to build SpotyPee"
@@ -23,5 +23,5 @@ RUN su yocto -c "\
     cd /home/yocto && \
 	git clone https://github.com/MrTarantoga/SpotyPee.git && \
 	cd SpotyPee && \
-	git checkout honister && \
+	git checkout v2.0.0 && \
     bash init_spotypee.sh"
