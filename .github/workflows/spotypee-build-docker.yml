@@ -2,12 +2,12 @@ name: Build Docker Container and execute them
 
 on:
   push:
-    branches: [ "main", "kirkstone", "honister" ]
+    branches: [ "main" ]
   pull_request:
     branches: [ "main", "kirkstone", "honister" ]
 
 jobs:
-  docker:
+  build_docker:
     runs-on: ubuntu-latest
     steps:
     - 
@@ -15,9 +15,11 @@ jobs:
       uses: actions/checkout@v3
     -
       name: Get current commit hash
-      run: git_hash=$(git rev-parse "$GITHUB_SHA")
+      run: |
+        export git_hash=$(git rev-parse "$GITHUB_SHA")
+        echo "Used git checkout $git_hash"
     - 
-      name: Build Dockerfile.yocto 
+      name: Build Dockerfile.yocto
       run: |
         docker build . --file Dockerfile.yocto --tag knallwinkel/yocto_kirkstone:latest
     -
