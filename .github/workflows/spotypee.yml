@@ -1,0 +1,20 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Build and execute build docker
+      run: |
+        docker build . --file Dockerfile.yocto --tag knallwinkel/yocto_kirkstone:latest
+        docker build . --file Dockerfile.SpotyPee --tag knallwinkel/spotypee:kirkstone
