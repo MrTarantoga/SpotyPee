@@ -2,9 +2,9 @@ name: Build Docker Container and execute them
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "main", "kirkstone", "honister" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "main", "kirkstone", "honister" ]
 
 jobs:
   docker:
@@ -27,3 +27,4 @@ jobs:
     - 
       name: Build System
       run: |
+        docker-compose --file docker-compose-action.yml up yocto_build
