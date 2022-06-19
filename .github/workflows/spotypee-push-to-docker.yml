@@ -1,0 +1,43 @@
+name: Build Docker Container and execute them
+
+on:
+  push:
+    branches: [ "kirkstone" ]
+
+jobs:
+  push_to_docker_hub:
+    runs-on: ubuntu-latest
+    steps:
+    - 
+      name: Checkout
+      uses: actions/checkout@v3
+    -
+      name: Set up QEMU
+      uses: docker/setup-qemu-action@v2
+    -
+      name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v2
+    -
+      name: Login to DockerHub
+      uses: docker/login-action@v2
+      with:
+        username: ${{ secrets.DOCKERHUB_USERNAME }}
+        password: ${{ secrets.DOCKERHUB_TOKEN }}
+    -
+      name: Build Dockerfile.yocto and push kirkstone tag
+      uses: docker/build-push-action@v3
+      with:
+        context: .
+        file: Dockerfile.yocto
+        push: true
+        tags: knallwinkel/yocto_kirkstone:latest
+    -
+      name: Build Dockerfile.SpotyPee and push kirkstone tag
+      uses: docker/build-push-action@v3
+      with:
+        context: .
+        file: Dockerfile.SpotyPee
+        push: true
+        build-args: |
+          SPOTYPEE_LABEL=kirkstone
+        tags: knallwinkel/spotypee:kirkstone
