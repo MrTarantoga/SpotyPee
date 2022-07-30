@@ -2,9 +2,9 @@ name: Build Docker Container and execute them
 
 on:
   push:
-    branches: [ "honister" ]
+    branches: [ "kirkstone" ]
   pull_request:
-    branches: [ "honister" ]
+    branches: [ "kirkstone" ]
 
 jobs:
   build_docker:
