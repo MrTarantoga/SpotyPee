@@ -8,6 +8,29 @@ services:
     volumes:
       - build_store:/home/yocto/yocto
       - downaload_store:/home/yocto/downloads
+
+  yocto_build_autom:
+    image: knallwinkel/spotypee:honister
+    user: yocto
+    working_dir: /home/yocto
+    command: bash -c "
+      rm -rf yocto/* &&
+      rm -rf download/* &&
+      cd SpotyPee/spotypee_build &&
+      source oe-init-build-env ../../yocto/build && 
+      echo 'BB_NUMBER_THREADS = \"6\"' >> conf/local.conf &&
+      bitbake spotypee"
+
+    volumes:
+      - build_store:/home/yocto/yocto
+      - downaload_store:/home/yocto/downloads
+     
+  yocto_dev:
+    image: knallwinkel/spotypee:honister
+    user: yocto
+    working_dir: /home/yocto
+    volumes:
+      - .:/home/yocto/current_dir
 volumes:
   build_store:
   downaload_store:
