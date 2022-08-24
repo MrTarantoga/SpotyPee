@@ -10,9 +10,9 @@ RUN apt-get update && \
 
 RUN apt-get update && \
     export DEBIAN_FRONTEND=noninteractive && \
-    apt-get install -y rustc cargo libssl1.1 libssl-dev pkg-config && \
+    apt-get install -y rustc cargo libssl3 libssl-dev pkg-config && \
     git clone https://github.com/meta-rust/cargo-bitbake.git && \
-    cd cargo-bitbake && git checkout 13eee8391261a605f1da26c1c9c6bab9d2a7b475 && \
+    cd cargo-bitbake && git checkout 3851a2d0aa5f80809a9f8609a84bf237bd5d8b38 && \
     cargo build --release && cp target/release/cargo-bitbake /bin && \
     cd .. && rm -rf cargo-bitbake && rm -rf $HOME/.cargo && \
     apt-get purge -y rustc cargo libssl-dev pkg-config && \
