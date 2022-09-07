@@ -25,6 +25,7 @@ jobs:
         password: ${{ secrets.DOCKERHUB_TOKEN }}
     -
       name: Build Dockerfile.yocto and push kirkstone tag
+
       uses: docker/build-push-action@v3
       with:
         context: .
@@ -33,6 +34,7 @@ jobs:
         tags: knallwinkel/yocto_kirkstone:latest
     -
       name: Build Dockerfile.SpotyPee and push kirkstone tag
+      
       uses: docker/build-push-action@v3
       with:
         context: .
