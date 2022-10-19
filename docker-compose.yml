@@ -8,6 +8,7 @@ services:
     volumes:
       - build_store:/home/yocto/yocto
       - downaload_store:/home/yocto/downloads
+      - ./output_dir:/home/yocto/output_dir
 
   yocto_build_autom:
     image: knallwinkel/spotypee:kirkstone
