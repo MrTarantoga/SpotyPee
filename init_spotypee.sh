@@ -1,6 +1,6 @@
 #!/bin/bash
 RESULT_FOLDER="spotypee_build"
-YOCTO_VERSION="kirkstone"
+YOCTO_VERSION="langdale"
 GIT_YOCTO="git://git.yoctoproject.org/poky.git"
 GIT_OPENEMBEDDED="git://git.openembedded.org/meta-openembedded"
 GIT_RASPBERRYPI="git://git.yoctoproject.org/meta-raspberrypi"
@@ -25,7 +25,7 @@ cp -r ../meta-rpi-config .
 
 #Set TEMPLATECONF
 printf $'# Template settings\n' > .templateconf
-printf $'TEMPLATECONF=${TEMPLATECONF:-meta-rpi-config/conf/samples}\n' >> .templateconf
+printf $'TEMPLATECONF=${TEMPLATECONF:-meta-rpi-config/conf/templates/default}\n' >> .templateconf
 
 #Change default path ##OEROOT##
-sed -i "s|##OEROOT##|${PWD}|g" meta-rpi-config/conf/samples/bblayers.conf.sample
+sed -i "s|##OEROOT##|${PWD}|g" meta-rpi-config/conf/templates/default/bblayers.conf.sample

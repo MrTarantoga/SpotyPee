@@ -1,4 +1,4 @@
-FROM knallwinkel/yocto_kirkstone:latest
+FROM knallwinkel/yocto_langdale:latest
 
 LABEL maintainer "goetz-dev@web.de"
 LABEL description "Container to build SpotyPee"
