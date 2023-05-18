@@ -2,7 +2,7 @@ version: '3'
 
 services:
   yocto_build:
-    image: knallwinkel/spotypee:langdale
+    image: knallwinkel/spotypee:mickledore
     user: yocto
     working_dir: /home/yocto
     volumes:
@@ -11,7 +11,7 @@ services:
       - ./output_dir:/home/yocto/output_dir
 
   yocto_build_autom:
-    image: knallwinkel/spotypee:langdale
+    image: knallwinkel/spotypee:mickledore
     user: yocto
     working_dir: /home/yocto
     command: bash -c "
@@ -27,7 +27,7 @@ services:
       - downaload_store:/home/yocto/downloads
      
   yocto_dev:
-    image: knallwinkel/spotypee:langdale
+    image: knallwinkel/spotypee:mickledore
     user: yocto
     working_dir: /home/yocto
     volumes:
