@@ -2,9 +2,9 @@ name: Build Docker Container and execute them
 
 on:
   push:
-    branches: [ "langdale" ]
+    branches: [ "mickledore" ]
   pull_request:
-    branches: [ "langdale" ]
+    branches: [ "mickledore" ]
 
 jobs:
   build_docker:
@@ -21,8 +21,8 @@ jobs:
     - 
       name: Build Dockerfile.yocto
       run: |
-        docker build . --file Dockerfile.yocto --tag knallwinkel/yocto_langdale:latest
+        docker build . --file Dockerfile.yocto --tag knallwinkel/yocto_mickledore:latest
     -
       name: Build Dockerfile.SpotyPee
       run: |
-        docker build . --file Dockerfile.SpotyPee --build-arg SPOTYPEE_LABEL=$git_hash --tag knallwinkel/spotypee:langdale
+        docker build . --file Dockerfile.SpotyPee --build-arg SPOTYPEE_LABEL=$git_hash --tag knallwinkel/spotypee:mickledore
