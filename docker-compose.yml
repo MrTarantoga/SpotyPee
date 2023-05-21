@@ -3,7 +3,7 @@ version: '3'
 services:
   yocto_build:
     image: knallwinkel/spotypee:langdale
-    user: yocto
+    user: yocto:users
     working_dir: /home/yocto
     volumes:
       - build_store:/home/yocto/yocto
