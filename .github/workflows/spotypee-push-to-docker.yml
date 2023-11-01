@@ -26,7 +26,7 @@ jobs:
     -
       name: Build Dockerfile.yocto and push mickledore tag
 
-      uses: docker/build-push-action@v4
+      uses: docker/build-push-action@v5
       with:
         context: .
         file: Dockerfile.yocto
@@ -35,7 +35,7 @@ jobs:
     -
       name: Build Dockerfile.SpotyPee and push mickledore tag
       
-      uses: docker/build-push-action@v4
+      uses: docker/build-push-action@v5
       with:
         context: .
         file: Dockerfile.SpotyPee
