@@ -1,5 +1,5 @@
-LINUX_VERSION = "6.1.21"
-SRCREV_machine = "0afb5e98488aed7017b9bf321b575d0177feb7ed"
+LINUX_VERSION = "6.1.58"
+SRCREV_machine = "8dcc16f0adc50f5cb8a11a6dde238131d0ca45a0"
 
 FILESEXTRAPATHS:prepend := "${THISDIR}/files:"
 SRC_URI += "file://add_cfg_6.1.cfg"
