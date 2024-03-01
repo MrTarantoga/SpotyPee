@@ -10,5 +10,7 @@ RUN apt-get update && \
 RUN useradd -m yocto && \
     mkdir /home/yocto/yocto && \
     mkdir /home/yocto/downloads && \
+    mkdir /home/yocto/output_dir && \
     chown yocto:users /home/yocto/yocto && \
-    chown yocto:users /home/yocto/downloads 
+    chown yocto:users /home/yocto/downloads && \
+    chown yocto:users /home/yocto/output_dir
