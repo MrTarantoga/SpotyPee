@@ -8,6 +8,7 @@ RUN apt-get update && \
     apt-get autoremove
 
 RUN useradd -m yocto && \
+    usermod -a -G ubuntu,users,users yocto && \
     mkdir /home/yocto/yocto && \
     mkdir /home/yocto/downloads && \
     mkdir /home/yocto/output_dir && \

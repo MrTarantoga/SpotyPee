@@ -1,9 +1,7 @@
-version: '3'
-
 services:
   yocto_build:
     image: knallwinkel/spotypee:nanbield
-    user: yocto:users
+    user: yocto
     working_dir: /home/yocto
     volumes:
       - build_store:/home/yocto/yocto
@@ -15,7 +13,6 @@ services:
     user: yocto
     working_dir: /home/yocto
     command: bash -c "
-      mkdir output_dir
       rm -rf yocto/* &&
       rm -rf download/* &&
       cd SpotyPee/spotypee_build &&
@@ -29,7 +26,7 @@ services:
 
   yocto_dev:
     image: knallwinkel/spotypee:nanbield
-    user: yocto:users
+    user: yocto
     working_dir: /home/yocto
     volumes:
       - .:/home/yocto/current_dir:z
