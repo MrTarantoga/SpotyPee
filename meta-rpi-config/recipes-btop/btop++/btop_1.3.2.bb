@@ -5,10 +5,12 @@ LICENSE = "Apache-2.0"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=96af5705d6f64a88e035781ef00e98a8"
 
 
-SRCREV	= "0f8498fa4e68e3af36a50b1d9f97b931b41b0824"
+SRCREV	= "fd2a2acdad6fbaad76846cb5e802cf2ae022d670"
 SRC_URI = "git://github.com/aristocratos/btop.git;branch=main;protocol=https"
 
 S = "${WORKDIR}/git"
+
+EXTRA_OEMAKE = "GPU_SUPPORT=false"
 
 do_compile(){
 	oe_runmake -e
