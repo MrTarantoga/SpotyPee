@@ -2,7 +2,7 @@ name: Build Docker Container and execute them
 
 on:
   push:
-    branches: [ "nanbield" ]
+    branches: [ "scarthgap" ]
 
 jobs:
   push_to_docker_hub:
@@ -24,16 +24,16 @@ jobs:
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_TOKEN }}
     -
-      name: Build Dockerfile.yocto and push nanbield tag
+      name: Build Dockerfile.yocto and push scarthgap tag
 
       uses: docker/build-push-action@v5
       with:
         context: .
         file: Dockerfile.yocto
         push: true
-        tags: knallwinkel/yocto_nanbield:latest
+        tags: knallwinkel/yocto_scarthgap:latest
     -
-      name: Build Dockerfile.SpotyPee and push nanbield tag
+      name: Build Dockerfile.SpotyPee and push scarthgap tag
 
       uses: docker/build-push-action@v5
       with:
@@ -41,5 +41,5 @@ jobs:
         file: Dockerfile.SpotyPee
         push: true
         build-args: |
-          SPOTYPEE_LABEL=nanbield
-        tags: knallwinkel/spotypee:nanbield
+          SPOTYPEE_LABEL=scarthgap
+        tags: knallwinkel/spotypee:scarthgap

@@ -1,6 +1,6 @@
 #!/bin/bash
 RESULT_FOLDER="spotypee_build"
-YOCTO_VERSION="nanbield"
+YOCTO_VERSION="scarthgap"
 GIT_YOCTO="git://git.yoctoproject.org/poky.git"
 GIT_OPENEMBEDDED="git://git.openembedded.org/meta-openembedded"
 GIT_RASPBERRYPI="git://git.yoctoproject.org/meta-raspberrypi"
