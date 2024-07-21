@@ -26,7 +26,7 @@ jobs:
     -
       name: Build Dockerfile.yocto and push nanbield tag
 
-      uses: docker/build-push-action@v5
+      uses: docker/build-push-action@v6
       with:
         context: .
         file: Dockerfile.yocto
@@ -35,7 +35,7 @@ jobs:
     -
       name: Build Dockerfile.SpotyPee and push nanbield tag
 
-      uses: docker/build-push-action@v5
+      uses: docker/build-push-action@v6
       with:
         context: .
         file: Dockerfile.SpotyPee
