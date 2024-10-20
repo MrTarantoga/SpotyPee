@@ -3,7 +3,7 @@ LABEL maintainer "goetz-dev@web.de"
 LABEL description "Container to build yocto images"
 
 RUN apt-get update && \
-    apt-get install -y python3 python3-distutils build-essential zstd chrpath cpio diffstat file gawk git lz4 wget locales locales-all && \
+    apt-get install -y python3 python3-setuptools build-essential zstd chrpath cpio diffstat file gawk git lz4 wget locales locales-all && \
     apt-get -y clean && \
     apt-get autoremove
 
