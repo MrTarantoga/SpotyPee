@@ -24,12 +24,6 @@ services:
       - build_store:/home/yocto/yocto
       - downaload_store:/home/yocto/downloads
 
-  yocto_dev:
-    image: knallwinkel/spotypee:scarthgap
-    user: yocto
-    working_dir: /home/yocto
-    volumes:
-      - .:/home/yocto/current_dir:z
 volumes:
   build_store:
   downaload_store:
