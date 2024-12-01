@@ -8,17 +8,17 @@ RUN apt-get update && \
     apt-get -y clean && \
     apt-get autoremove
 
-# Use Pull request from TaborKelly, because there errrors with new rust version
-RUN apt-get update && \
-    export DEBIAN_FRONTEND=noninteractive && \
-    apt-get install -y rustc cargo libssl3 libssl-dev pkg-config && \
-    git clone https://github.com/TaborKelly/cargo-bitbake.git && \
-    cd cargo-bitbake && git checkout 5ecf45c950c97def04500f8a152b478d7384ab01 && \
-    cargo build --release && cp target/release/cargo-bitbake /bin && \
-    cd .. && rm -rf cargo-bitbake && rm -rf $HOME/.cargo && \
-    apt-get purge -y rustc cargo libssl-dev pkg-config && \
-    apt-get autoremove -y && \
-    apt-get -y clean
+## Use Pull request from TaborKelly, because there errrors with new rust version
+#RUN apt-get update && \
+#    export DEBIAN_FRONTEND=noninteractive && \
+#    apt-get install -y rustc cargo libssl3 libssl-dev pkg-config && \
+#    git clone https://github.com/TaborKelly/cargo-bitbake.git && \
+#    cd cargo-bitbake && git checkout 5ecf45c950c97def04500f8a152b478d7384ab01 && \
+#    cargo build --release && cp target/release/cargo-bitbake /bin && \
+#    cd .. && rm -rf cargo-bitbake && rm -rf $HOME/.cargo && \
+#    apt-get purge -y rustc cargo libssl-dev pkg-config && \
+#    apt-get autoremove -y && \
+#    apt-get -y clean
 
 RUN su yocto -c "\
     cd /home/yocto && \
