@@ -5,7 +5,7 @@ GIT_YOCTO="git://git.yoctoproject.org/poky.git"
 GIT_OPENEMBEDDED="git://git.openembedded.org/meta-openembedded"
 GIT_RASPBERRYPI="git://git.yoctoproject.org/meta-raspberrypi"
 GIT_SECURITY="git://git.yoctoproject.org/meta-security.git"
-GIT_CLANG="htps://github.com/kraj/meta-clang.git"
+GIT_CLANG="https://github.com/kraj/meta-clang.git"
 
 GIT_REPOS=("$GIT_OPENEMBEDDED" "$GIT_RASPBERRYPI" "$GIT_SECURITY" "$GIT_CLANG")
 #GIT_REPOS=("$GIT_OPENEMBEDDED" "$GIT_SECURITY")
