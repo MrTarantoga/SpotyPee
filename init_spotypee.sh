@@ -5,11 +5,12 @@ GIT_YOCTO="git://git.yoctoproject.org/poky.git"
 GIT_OPENEMBEDDED="git://git.openembedded.org/meta-openembedded"
 GIT_RASPBERRYPI="git://git.yoctoproject.org/meta-raspberrypi"
 GIT_SECURITY="git://git.yoctoproject.org/meta-security.git"
+GIT_CLANG="git://github.com/kraj/meta-clang.git"
 
 GIT_REPOS=("$GIT_OPENEMBEDDED" "$GIT_RASPBERRYPI" "$GIT_SECURITY")
 #GIT_REPOS=("$GIT_OPENEMBEDDED" "$GIT_SECURITY")
 
-git clone --branch $YOCTO_VERSION $GIT_YOCTO $RESULT_FOLDER
+git clone --branch $YOCTO_VERSION $GIT_YOCTO $RESULT_FOLDER $GIT_CLANG
 cd $RESULT_FOLDER
 
 #echo $GIT_RASPBERRYPI
