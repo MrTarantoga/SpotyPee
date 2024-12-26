@@ -9,15 +9,24 @@ SRC_URI += "git://github.com/librespot-org/librespot.git;protocol=https;nobranch
 SRCREV = "383a6f6969f23b3e3cbc693747101cb9c92463dc"
 S = "${WORKDIR}/git"
 CARGO_SRC_DIR = ""
-CARGO_BUILD_FLAGS:append = " --no-default-features --features pulseaudio-backend"
+CARGO_BUILD_FLAGS:append = " --no-default-features --features with-libmdns --features pulseaudio-backend"
 
 DEPENDS = "\
-	pulseaudio \
+    pulseaudio \
+    libnss-mdns \
     bindgen-cli-native \
+    virtual/libc \
 "
 RDEPENDS:${PN} = "\
     pulseaudio \
+    libnss-mdns \
+    ca-certificates \
 "
+
+export BINDGEN_EXTRA_CLANG_ARGS = "--sysroot=${STAGING_DIR_TARGET}"
+do_compile[exported_vars] += "BINDGEN_EXTRA_CLANG_ARGS"
+
+
 # please note if you have entries that do not begin with crate://
 # you must change them to how that package can be fetched
 SRC_URI += " \
