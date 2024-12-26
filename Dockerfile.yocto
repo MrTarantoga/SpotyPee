@@ -9,6 +9,7 @@ RUN apt-get update && \
 
 RUN useradd -m yocto && \
     usermod -a -G ubuntu,users,sudo yocto && \
+    echo 'yocto ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers && \
     mkdir /home/yocto/yocto && \
     mkdir /home/yocto/downloads && \
     mkdir /home/yocto/output_dir && \
