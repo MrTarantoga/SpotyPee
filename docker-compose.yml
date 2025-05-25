@@ -1,6 +1,6 @@
 services:
   yocto_build:
-    image: knallwinkel/spotypee:scarthgap
+    image: knallwinkel/spotypee:walnascar
     user: yocto
     working_dir: /home/yocto
     volumes:
@@ -9,7 +9,7 @@ services:
       - ./output_dir:/home/yocto/output_dir:z
 
   yocto_build_autom:
-    image: knallwinkel/spotypee:scarthgap
+    image: knallwinkel/spotypee:walnascar
     user: yocto
     working_dir: /home/yocto
     command: bash -c "
