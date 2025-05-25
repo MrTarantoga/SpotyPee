@@ -5,6 +5,9 @@ SRC_URI = "\
     file://librespot.service \
 "
 
+S = "${WORKDIR}/sources"
+UNPACKDIR = "${S}"
+
 RDEPENDS:${PN} = "pulseaudio-volume"
 
 inherit useradd

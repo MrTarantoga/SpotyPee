@@ -16,13 +16,13 @@ CARGO_BUILD_FLAGS:append = " --no-default-features --features with-libmdns --fea
 
 DEPENDS = "\
     pulseaudio \
-    libnss-mdns \
+    avahi-libnss-mdns \
     bindgen-cli-native \
     virtual/libc \
 "
 RDEPENDS:${PN} = "\
     pulseaudio \
-    libnss-mdns \
+    avahi-libnss-mdns \
     ca-certificates \
 "
 

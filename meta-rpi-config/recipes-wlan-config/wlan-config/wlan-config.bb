@@ -22,6 +22,8 @@ FILES:${PN} = "\
     ${D}${systemd_system_unitdir}/wpa_supplicant@wlan0.service \
 "
 
+S = "${WORKDIR}/sources"
+UNPACKDIR = "${S}"
 
 REQUIRED_DISTRO_FEATURES= "systemd"
 RDEPENDS:${PN} = "wpa-supplicant"
