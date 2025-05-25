@@ -4,7 +4,6 @@ LICENSE = "MIT"
 SRC_URI = "\
     file://librespot.service \
 "
-S = "${WORKDIR}"
 
 RDEPENDS:${PN} = "pulseaudio-volume"
 

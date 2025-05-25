@@ -2,8 +2,6 @@ SUMMARY = "Create default wlan interface"
 
 LICENSE = "MIT"
 
-S = "${WORKDIR}"
-
 python() {
     if not d.getVar("WLAN_PASSWORD"):
         bb.fatal("The variable  \"WLAN_PASSWORD\" is unset")
