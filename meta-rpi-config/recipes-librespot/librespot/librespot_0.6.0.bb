@@ -9,7 +9,6 @@ SRC_URI += "git://github.com/librespot-org/librespot.git;protocol=https;nobranch
 SRCREV = "383a6f6969f23b3e3cbc693747101cb9c92463dc"
 
 S = "${WORKDIR}/git"
-UNPACKDIR = "${S}"
 
 CARGO_SRC_DIR = ""
 CARGO_BUILD_FLAGS:append = " --no-default-features --features with-libmdns --features pulseaudio-backend"
