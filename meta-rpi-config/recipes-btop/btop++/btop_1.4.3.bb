@@ -14,12 +14,14 @@ UNPACKDIR = "${S}"
 EXTRA_OEMAKE = "GPU_SUPPORT=false"
 
 do_compile(){
-	oe_runmake -e
+    cd git
+    oe_runmake -e
 }
 
 do_install(){
+    cd git
     oe_runmake install DESTDIR=${D}
-	chown root:root -R ${D}/usr/local/
+    chown root:root -R ${D}/usr/local/
 }
 
 
