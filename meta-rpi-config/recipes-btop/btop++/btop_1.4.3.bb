@@ -9,17 +9,14 @@ SRCREV	= "3f1ccd9f6c455fef6d4d8cfbc8ed71b86961323d"
 SRC_URI = "git://github.com/aristocratos/btop.git;branch=main;protocol=https"
 
 S = "${WORKDIR}/git"
-UNPACKDIR = "${S}"
 
 EXTRA_OEMAKE = "GPU_SUPPORT=false"
 
 do_compile(){
-    cd git
     oe_runmake -e
 }
 
 do_install(){
-    cd git
     oe_runmake install DESTDIR=${D}
     chown root:root -R ${D}/usr/local/
 }
