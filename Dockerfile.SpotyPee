@@ -1,7 +1,7 @@
 FROM knallwinkel/yocto_scarthgap:latest
 
-LABEL maintainer "goetz-dev@web.de"
-LABEL description "Container to build SpotyPee"
+LABEL maintainer="goetz-dev@web.de"
+LABEL description="Container to build SpotyPee"
 
 RUN apt-get update && \
     apt-get install -y nano && \
