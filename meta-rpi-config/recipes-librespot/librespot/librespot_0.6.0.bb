@@ -7,19 +7,21 @@ inherit cargo
 # SRC_URI += "crate://crates.io/librespot/v0.6.0"
 SRC_URI += "git://github.com/librespot-org/librespot.git;protocol=https;nobranch=1"
 SRCREV = "383a6f6969f23b3e3cbc693747101cb9c92463dc"
+
 S = "${WORKDIR}/git"
+
 CARGO_SRC_DIR = ""
 CARGO_BUILD_FLAGS:append = " --no-default-features --features with-libmdns --features pulseaudio-backend"
 
 DEPENDS = "\
     pulseaudio \
-    libnss-mdns \
+    avahi-libnss-mdns \
     bindgen-cli-native \
     virtual/libc \
 "
 RDEPENDS:${PN} = "\
     pulseaudio \
-    libnss-mdns \
+    avahi-libnss-mdns \
     ca-certificates \
 "
 

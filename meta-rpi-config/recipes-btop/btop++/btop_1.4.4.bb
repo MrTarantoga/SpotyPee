@@ -13,12 +13,12 @@ S = "${WORKDIR}/git"
 EXTRA_OEMAKE = "GPU_SUPPORT=false"
 
 do_compile(){
-	oe_runmake -e
+    oe_runmake -e
 }
 
 do_install(){
     oe_runmake install DESTDIR=${D}
-	chown root:root -R ${D}/usr/local/
+    chown root:root -R ${D}/usr/local/
 }
 
 

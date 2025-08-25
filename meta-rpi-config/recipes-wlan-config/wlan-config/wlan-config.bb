@@ -2,8 +2,6 @@ SUMMARY = "Create default wlan interface"
 
 LICENSE = "MIT"
 
-S = "${WORKDIR}"
-
 python() {
     if not d.getVar("WLAN_PASSWORD"):
         bb.fatal("The variable  \"WLAN_PASSWORD\" is unset")
@@ -24,6 +22,8 @@ FILES:${PN} = "\
     ${D}${systemd_system_unitdir}/wpa_supplicant@wlan0.service \
 "
 
+S = "${WORKDIR}/sources"
+UNPACKDIR = "${S}"
 
 REQUIRED_DISTRO_FEATURES= "systemd"
 RDEPENDS:${PN} = "wpa-supplicant"
