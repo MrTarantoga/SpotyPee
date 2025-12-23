@@ -6,8 +6,9 @@ GIT_OPENEMBEDDED="git://git.openembedded.org/meta-openembedded"
 GIT_RASPBERRYPI="git://git.yoctoproject.org/meta-raspberrypi"
 GIT_SECURITY="git://git.yoctoproject.org/meta-security.git"
 GIT_CLANG="https://github.com/kraj/meta-clang.git"
+GIT_RUST_PRE_BUILD="https://github.com/MrTarantoga/meta-rust-bin.git"
 
-GIT_REPOS=("$GIT_OPENEMBEDDED" "$GIT_RASPBERRYPI" "$GIT_SECURITY" "$GIT_CLANG")
+GIT_REPOS=("$GIT_OPENEMBEDDED" "$GIT_RASPBERRYPI" "$GIT_SECURITY" "$GIT_CLANG" "$GIT_RUST_PRE_BUILD")
 #GIT_REPOS=("$GIT_OPENEMBEDDED" "$GIT_SECURITY")
 
 git clone --branch $YOCTO_VERSION $GIT_YOCTO $RESULT_FOLDER
