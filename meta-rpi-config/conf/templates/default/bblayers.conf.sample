@@ -6,15 +6,13 @@ BBPATH = "${TOPDIR}"
 BBFILES ?= ""
 
 BBLAYERS ?= " \
-    ##OEROOT##/meta \
-    ##OEROOT##/meta-openembedded/meta-oe \
-    ##OEROOT##/meta-openembedded/meta-multimedia \
-    ##OEROOT##/meta-openembedded/meta-networking \
-    ##OEROOT##/meta-openembedded/meta-perl \
-    ##OEROOT##/meta-openembedded/meta-python \
-    ##OEROOT##/meta-clang \
-    ##OEROOT##/meta-raspberrypi \
-    ##OEROOT##/meta-security \
-    ##OEROOT##/meta-rust-bin \
-    ##OEROOT##/meta-rpi-config \
+    /var/home/goetz/github/SpotyPee/spotypee_build/openembedded-core/meta \
+    /var/home/goetz/github/SpotyPee/spotypee_build/meta-openembedded/meta-oe \
+    /var/home/goetz/github/SpotyPee/spotypee_build/meta-openembedded/meta-multimedia \
+    /var/home/goetz/github/SpotyPee/spotypee_build/meta-openembedded/meta-networking \
+    /var/home/goetz/github/SpotyPee/spotypee_build/meta-openembedded/meta-perl \
+    /var/home/goetz/github/SpotyPee/spotypee_build/meta-openembedded/meta-python \
+    /var/home/goetz/github/SpotyPee/spotypee_build/meta-raspberrypi \
+    /var/home/goetz/github/SpotyPee/spotypee_build/meta-security \
+    /var/home/goetz/github/SpotyPee/spotypee_build/meta-rpi-config \
 "

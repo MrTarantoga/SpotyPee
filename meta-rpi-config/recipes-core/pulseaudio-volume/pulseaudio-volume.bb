@@ -1,8 +1,7 @@
 LICENSE = "MIT"
 SRC_URI = "file://pulseaudio_volume.service"
 
-S = "${WORKDIR}/sources"
-UNPACKDIR = "${S}"
+S = "${UNPACKDIR}"
 
 inherit systemd
 

@@ -8,8 +8,6 @@ LIC_FILES_CHKSUM = "file://LICENSE;md5=96af5705d6f64a88e035781ef00e98a8"
 SRCREV	= "a1099d075fa914452366b28c67ff171e21a1f02e"
 SRC_URI = "git://github.com/aristocratos/btop.git;branch=main;protocol=https"
 
-S = "${WORKDIR}/git"
-
 EXTRA_OEMAKE = "GPU_SUPPORT=false"
 
 do_compile(){

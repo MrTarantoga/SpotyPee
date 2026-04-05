@@ -5,8 +5,7 @@ SRC_URI = "\
     file://librespot.service \
 "
 
-S = "${WORKDIR}/sources"
-UNPACKDIR = "${S}"
+S = "${UNPACKDIR}"
 
 RDEPENDS:${PN} = "pulseaudio-volume"
 
