@@ -5,7 +5,7 @@ LICENSE = "Apache-2.0"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=96af5705d6f64a88e035781ef00e98a8"
 
 
-SRCREV	= "a1099d075fa914452366b28c67ff171e21a1f02e"
+SRCREV	= "6e39144aaf5a6bc01b9f795010b0914431067183"
 SRC_URI = "git://github.com/aristocratos/btop.git;branch=main;protocol=https"
 
 EXTRA_OEMAKE = "GPU_SUPPORT=false"
