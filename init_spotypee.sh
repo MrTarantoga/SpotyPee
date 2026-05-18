@@ -4,9 +4,9 @@ YOCTO_VERSION="whinlatter"
 BITBAKE_VERSION="2.16"
 GIT_BITBAKE="https://git.openembedded.org/bitbake"
 GIT_OPENEMBEDDED_CORE="https://git.openembedded.org/openembedded-core"
-GIT_OPENEMBEDDED="git://git.openembedded.org/meta-openembedded"
-GIT_RASPBERRYPI="git://git.yoctoproject.org/meta-raspberrypi"
-GIT_SECURITY="git://git.yoctoproject.org/meta-security.git"
+GIT_OPENEMBEDDED="https://git.openembedded.org/meta-openembedded"
+GIT_RASPBERRYPI="https://git.yoctoproject.org/meta-raspberrypi"
+GIT_SECURITY="https://git.yoctoproject.org/meta-security.git"
 
 GIT_REPOS=("$GIT_OPENEMBEDDED_CORE" "$GIT_OPENEMBEDDED" "$GIT_RASPBERRYPI" "$GIT_SECURITY")
 
