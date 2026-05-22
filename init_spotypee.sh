@@ -26,6 +26,11 @@ done
 
 cp -r ../meta-rpi-config .
 
+# Apply patch for bitbake, due the crates.io issue: https://github.com/openembedded/bitbake/commit/a9f09b9e2f187f07a6f6dfd1caa3fd2f3d564a8a
+cd bitbake
+git apply ../../0001-Fix-crates-issue.patch
+cd ..
+
 #Set TEMPLATECONF
 printf $'# Template settings\n' > .templateconf
 echo "TEMPLATECONF=$PWD/meta-rpi-config/conf/templates/default" >> .templateconf
