@@ -1,28 +1,12 @@
 services:
   yocto_build:
-    image: knallwinkel/spotypee:walnascar
+    image: knallwinkel/spotypee:wrynose
     user: yocto
     working_dir: /home/yocto
     volumes:
       - build_store:/home/yocto/yocto
       - downaload_store:/home/yocto/downloads
       - ./output_dir:/home/yocto/output_dir:z
-
-  yocto_build_autom:
-    image: knallwinkel/spotypee:walnascar
-    user: yocto
-    working_dir: /home/yocto
-    command: bash -c "
-      rm -rf yocto/* &&
-      rm -rf download/* &&
-      cd SpotyPee/spotypee_build &&
-      source oe-init-build-env ../../yocto/build &&
-      echo 'BB_NUMBER_THREADS = \"6\"' >> conf/local.conf &&
-      bitbake spotypee"
-
-    volumes:
-      - build_store:/home/yocto/yocto
-      - downaload_store:/home/yocto/downloads
 
 volumes:
   build_store:

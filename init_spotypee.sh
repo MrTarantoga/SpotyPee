@@ -1,14 +1,14 @@
 #!/bin/bash
 RESULT_FOLDER="spotypee_build"
-YOCTO_VERSION="whinlatter"
-BITBAKE_VERSION="2.16"
+YOCTO_VERSION="wrynose"
+BITBAKE_VERSION="2.18"
 GIT_BITBAKE="https://git.openembedded.org/bitbake"
 GIT_OPENEMBEDDED_CORE="https://git.openembedded.org/openembedded-core"
-GIT_OPENEMBEDDED="git://git.openembedded.org/meta-openembedded"
-GIT_RASPBERRYPI="git://git.yoctoproject.org/meta-raspberrypi"
-GIT_SECURITY="git://git.yoctoproject.org/meta-security.git"
+GIT_OPENEMBEDDED="https://git.openembedded.org/meta-openembedded"
+GIT_RASPBERRYPI="https://git.yoctoproject.org/meta-raspberrypi"
+GIT_SECURITY="https://git.yoctoproject.org/meta-security.git"
 
-GIT_REPOS=("$GIT_OPENEMBEDDED_CORE" "$GIT_OPENEMBEDDED" "$GIT_RASPBERRYPI" "$GIT_SECURITY")
+GIT_REPOS=("$GIT_OPENEMBEDDED_CORE" "$GIT_OPENEMBEDDED" "$GIT_SECURITY" "$GIT_RASPBERRYPI")
 
 if [ -d "$RESULT_FOLDER" ]; then
   rm -rf "$RESULT_FOLDER"
