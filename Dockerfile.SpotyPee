@@ -26,4 +26,4 @@ RUN su yocto -c "\
     cd /home/yocto && \
 	git clone https://github.com/MrTarantoga/SpotyPee.git && \
 	cd SpotyPee && \
-	git checkout wrynose
+	git checkout wrynose"
